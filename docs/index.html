@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="RT-Tango: Real-Time Distributed Binaural Speech Enhancement for Low-Power Hearing Aid Devices - Zahra Benslimane, Pierre Chouteau, Martyna Poreba, Fabrice Auzanneau, Michal Szczepanski, Fabian Chersi and Romain Serizel">
+  <meta name="description" content="">
+  <meta name="keywords" content="Speech Enhancement, Binaural, Low-latency, Real-Time, Hearing Aid, Deep Learnings">
+  <meta name="author" content="Zahra Benslimane, Pierre Chouteau, Martyna Poreba, Fabrice Auzanneau, Michal Szczepanski, Fabian Chersi and Romain Serizel">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="RT-Tango: Real-Time Distributed Binaural Speech Enhancement for Low-Power Hearing Aid Devices">
+  <meta name="citation_author" content="Zahra Benslimane, Pierre Chouteau, Martyna Poreba, Fabrice Auzanneau, Michal Szczepanski, Fabian Chersi and Romain Serizel">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="Interspeech">
+  <meta name="citation_pdf_url" content="https://github.com/ZahraBenslimane/RT-Tango/static/pdfs/paper.pdf">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <!-- TODO: Replace with your paper title and authors -->
+  <title>RT-Tango: Real-Time Distributed Binaural Speech Enhancement for Low-Power Hearing Aid Devices - Zahra Benslimane, Pierre Chouteau, Martyna Poreba, Fabrice Auzanneau, Michal Szczepanski, Fabian Chersi and Romain Serizel | Academic Research</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "RT-Tango: Real-Time Distributed Binaural Speech Enhancement for Low-Power Hearing Aid Devices",
+    "description": "",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Zahra Benslimane",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Université Paris-Saclay, CEA, List, F-91120 Palaiseau, France and Université de Lorraine, CNRS, Inria, LORIA, F-54000 Nancy, France"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Pierre Chouteau",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Université Paris-Saclay, CEA, List, F-91120 Palaiseau, France"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Martyna Poreba",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Université Paris-Saclay, CEA, List, F-91120 Palaiseau, France"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Fabrice Auzanneau",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Université Paris-Saclay, CEA, List, F-91120 Palaiseau, France"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Michal Szczepanski",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Université Paris-Saclay, CEA, List, F-91120 Palaiseau, France"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Fabian Chersi",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Université Paris-Saclay, CEA, List, F-91120 Palaiseau, France"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Romain Serizel",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Université de Lorraine, CNRS, Inria, LORIA, F-54000 Nancy, France"
+        }
+      },
+    ],
+    "datePublished": "2026-01-01",
+    "publisher": {
+      "@type": "Conference",
+      "name": "Interspeech",
+    },
+    "url": "",
+    "image": "",
+    "keywords": ["Speech Enhancement", "Binaural", "Low-latency", "Real-Time", "Hearing Aid"],
+    "abstract": "Real-time binaural speech enhancement is constrained by latency, computational cost, and inter-device communication, yet existing efficient solutions predominantly address single-channel settings. In this paper, we introduce RT-Tango, a real-time distributed binaural speech enhancement framework designed for streaming on resource-constrained platforms and specifically for hearing aids. RT-Tango relies on a two-stage distributed architecture combining perceptually motivated ERB feature compression, lightweight grouped recurrent mask estimation, and temporal sparsification to reduce computational cost. Stringent latency constraints are addressed by decoupling spectral resolution from algorithmic delay using an asymmetric STFT, together with causal recurrent inference and online estimation of spatial statistics. Experimental results show that RT-Tango achieves competitive speech enhancement while significantly reducing MACs operations and functioning at ultra-low latencies as low as 8 ms.",
+    "citation": "@inproceedings{benslimane26_interspeech,
+                    title={{RT-Tango: Real-Time Distributed Binaural Speech Enhancement for Low-Power Hearing Aid Devices}},
+                    author={Zahra Benslimane and Pierre Chouteau and Martyna Poreba and Fabrice Auzanneau and Michal Szczepanski and Fabian Chersi and Romain Serizel},
+                    year={2026},
+                    booktitle={{Interspeech 2026}},
+                    pages={3027--3031},
+                    doi={10.21437/Interspeech.2026-3301},
+                    issn={2958-1796},
+                }",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+  }
+  </script>
+</head>
+
+
+<body>
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <div class="more-works-container">
+        <button class="more-works-btn" onclick="toggleMoreWorks()" title="Navigate Pages">
+            <i class="fas fa-bars"></i> Menu <i class="fas fa-chevron-down dropdown-arrow"></i>
+        </button>
+        
+        <div class="more-works-dropdown" id="moreWorksDropdown">
+            <div class="dropdown-content-wrapper">
+                
+                <a class="dropdown-item-link" href="index.html#Article">
+                    <div class="dropdown-item-title">Article</div>
+                </a>
+
+                <a class="dropdown-item-link" href="index.html#Abstract">
+                    <div class="dropdown-item-title">Abstract</div>
+                </a>
+
+                <a class="dropdown-item-link" href="index.html#RT-Tango">
+                    <div class="dropdown-item-title">RT-Tango</div>
+                </a>
+                
+                <a class="dropdown-item-link" href="index.html#AudioExamples">
+                    <div class="dropdown-item-title">Audio Examples</div>
+                </a>
+
+                <a class="dropdown-item-link" href="index.html#BibTeX">
+                    <div class="dropdown-item-title">BibTeX</div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+  <main id="main-content">
+  <section class="hero" id="Article">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">RT-Tango: Real-Time Distributed Binaural Speech Enhancement for Low-Power Hearing Aid Devices</h1>
+
+                <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                    <a href="https://orcid.org/0009-0005-9846-9767" target="_blank">Zahra Benslimane<sup><em>1,2</em></sup></a>,
+                </span>
+                <span class="author-block">
+                    <a href="https://scholar.google.com/citations?hl=fr&user=d7OMRpgAAAAJ" target="_blank">Pierre Chouteau<sup><em>1</em></sup></a>,
+                </span>
+                <span class="author-block">
+                    <a href="https://scholar.google.com/citations?hl=fr&user=5fH8NSUAAAAJ" target="_blank">Martyna Poreba<sup><em>1</em></sup></a>,
+                </span>
+                <span class="author-block">
+                    <a href="https://scholar.google.com/citations?hl=fr&user=L9gfC-gAAAAJ" target="_blank">Fabrice Auzanneau<sup><em>1</em></sup></a>,
+                </span>
+                <span class="author-block">
+                    <a href="https://scholar.google.com/citations?hl=fr&user=WFcpoEwAAAAJ" target="_blank">Michal Szczepanski<sup><em>1</em></sup></a>,
+                </span>
+                <span class="author-block">
+                    <a href="https://scholar.google.com/citations?hl=fr&user=z0TwEAQAAAAJ" target="_blank">Fabian Chersi<sup><em>1</em></sup></a>,
+                </span>
+                <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=_PXk20cAAAAJ&hl" target="_blank">Romain Serizel<sup><em>2</em></sup></a>
+                </span>
+                </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">
+                        <sup><em>1</em></sup> Université Paris-Saclay, CEA, List, F-91120 Palaiseau, France 
+                        <br><sup><em>2</em></sup> Université de Lorraine, CNRS, Inria, LORIA, F-54000 Nancy, France
+                        <br>Interspeech 2026
+                    </span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2607.01834" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                  <span class="link-block">
+                    <a href="https://github.com/ZahraBenslimane/RT-Tango" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2607.01834" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light" id="Abstract">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Real-time binaural speech enhancement is constrained by latency, 
+            computational cost, and inter-device communication, yet existing 
+            efficient solutions predominantly address single-channel settings. 
+            In this paper, we introduce RT-Tango, a real-time distributed binaural 
+            speech enhancement framework designed for streaming on resource-constrained 
+            platforms and specifically for hearing aids. RT-Tango relies on a two-stage 
+            distributed architecture combining perceptually motivated ERB feature 
+            compression, lightweight grouped recurrent mask estimation, and temporal 
+            sparsification to reduce computational cost. Stringent latency constraints 
+            are addressed by decoupling spectral resolution from algorithmic delay 
+            using an asymmetric STFT, together with causal recurrent inference and 
+            online estimation of spatial statistics. Experimental results show that 
+            RT-Tango achieves competitive speech enhancement while significantly 
+            reducing MACs operations and functioning at ultra-low latencies as low as 8 ms.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<section class="section hero is-small" id="RT-Tango">
+  <div class="container is-max-desktop">
+    
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="title is-3">RT-Tango</h2>
+      </div>
+    </div>
+
+    <div class="columns is-vcentered is-desktop">
+      <!-- Figure -->
+      <div class="column is-5">
+        <figure class="image custom-svg-container">
+            <img src="static/images/tango.svg" alt="RT-Tango two-stage distributed architecture" loading="lazy">
+        </figure>
+      </div>
+
+        <!-- Text -->
+      <div class="column is-7">
+        <div class="content">
+            <div class="level-set has-text-justified">
+              <p>
+                RT-Tango is a distributed binaural speech enhancement framework 
+                designed for deployment on modern hearing devices, where 
+                computational resources, power consumption, and latency are 
+                tightly constrained. Building upon the original Tango 
+                architecture, RT-Tango combines architectural and 
+                signal-processing optimizations to substantially reduce 
+                computational complexity while maintaining speech enhancement 
+                performance and preserving binaural spatial cues.
+              </p>
+              <p>
+                We also introduce RT-Tango-OS, a strictly causal streaming 
+                version of the model. With an algorithmic latency of only 8 ms, 
+                RT-Tango-OS is suitable for real-time operation and meets the 
+                latency requirements of practical binaural hearing aid applications.
+              </p>
+            </div>
+        </div>
+      </div>
+        
+    </div>
+
+  </div>
+</section>
+
+<section class="section hero is-small is-light" id="AudioExamples">
+  <div class="container is-max-desktop">
+    
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h2 class="title is-3">Audio Examples</h2>
+      </div>
+    </div>
+
+      <div class="columns is-centered">
+        <div class="content">
+          <div class="level-set has-text-justified">
+            <p>
+              The audio examples below illustrate the performance of RT-Tango under a range of acoustic conditions. 
+              Each row corresponds to a different test scenario with varying input signal-to-noise ratios (SNRs). 
+              For each example, the following audio signals are provided for comparison:
+            </p>
+            <ol>
+              <li><strong>Noisy Input</strong></li>
+              <li><strong>Clean Reference</strong></li>
+              <li><strong>Tango (Baseline)</strong></li>
+              <li><strong>GTCRN</strong></li>
+              <li><strong>RT-Tango (Ours)</strong></li>
+            </ol>
+            <p>
+              All audio samples are taken from the Binaurec dataset, a binaural speech corpus comprising mixtures 
+              generated using measured room impulse responses (RIRs). The RIRs were recorded with a portable hearing 
+              laboratory (PHL) equipped with behind-the-ear hearing aids mounted on a dummy head, providing realistic 
+              binaural recordings.
+            </p>
+            <p>
+              The evaluation considers acoustic configurations in which the target speaker is positioned directly in 
+              front of the listener, while the interfering noise source is located either 45° (scenario A) or 90° 
+              (scenario B) to the right of the target. These configurations produce a lower signal-to-interference 
+              ratio (SIR) at the right ear than at the left ear, reflecting realistic spatial listening conditions.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    <div class="audio-matrix-container">
+    
+      <!-- Table Header Labels -->
+      <div class="columns is-vcentered matrix-header has-text-centered is-desktop">
+        <div class="column is-2">Acoustic Scenario</div>
+        <div class="column is-2">Noisy Input</div>
+        <div class="column is-2">Clean</div>
+        <div class="column is-2">Tango (Baseline)</div>
+        <div class="column is-2">GTCRN</div>
+        <div class="column is-2">RT-Tango (Ours)</div>
+      </div>
+
+      <!-- Row 1: Scenario A -5 dB SNR -->
+      <div class="columns is-vcentered matrix-row has-text-centered is-desktop">
+        <div class="column is-2">
+          <div class="audio-scene-label">Scenario A</div>
+          <span class="tag is-light is-danger snr-tag">-5 dB SNR</span>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr-5/01_scenarioA_snr-5_11194/mixture.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr-5/01_scenarioA_snr-5_11194/target.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr-5/01_scenarioA_snr-5_11194/tango.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr-5/01_scenarioA_snr-5_11194/gtcrn.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr-5/01_scenarioA_snr-5_11194/rt_tango.wav"></audio>
+        </div>
+      </div>
+
+      <!-- Row 2: Scenario B -5 dB SNR -->
+      <div class="columns is-vcentered matrix-row has-text-centered is-desktop">
+        <div class="column is-2">
+          <div class="audio-scene-label">Scenario B</div>
+          <span class="tag is-light is-danger snr-tag">-5 dB SNR</span>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr-5/01_scenarioB_snr-5_11269/mixture.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr-5/01_scenarioB_snr-5_11269/target.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr-5/01_scenarioB_snr-5_11269/tango.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr-5/01_scenarioB_snr-5_11269/gtcrn.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr-5/01_scenarioB_snr-5_11269/rt_tango.wav"></audio>
+        </div>
+      </div>
+
+      <!-- Row 3: Scenario A 0 dB SNR -->
+      <div class="columns is-vcentered matrix-row has-text-centered is-desktop">
+        <div class="column is-2">
+          <div class="audio-scene-label">Scenario A</div>
+          <span class="tag is-light is-danger snr-tag">0 dB SNR</span>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr0/02_scenarioA_snr0_11545/mixture.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr0/02_scenarioA_snr0_11545/target.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr0/02_scenarioA_snr0_11545/tango.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr0/02_scenarioA_snr0_11545/gtcrn.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr0/02_scenarioA_snr0_11545/rt_tango.wav"></audio>
+        </div>
+      </div>
+
+      <!-- Row 4: Scenario B 0 dB SNR -->
+      <div class="columns is-vcentered matrix-row has-text-centered is-desktop">
+        <div class="column is-2">
+          <div class="audio-scene-label">Scenario B</div>
+          <span class="tag is-light is-danger snr-tag">0 dB SNR</span>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr0/01_scenarioB_snr0_11613/mixture.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr0/01_scenarioB_snr0_11613/target.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr0/01_scenarioB_snr0_11613/tango.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr0/01_scenarioB_snr0_11613/gtcrn.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr0/01_scenarioB_snr0_11613/rt_tango.wav"></audio>
+        </div>
+      </div>
+
+      <!-- Row 5: Scenario A +5 dB SNR -->
+      <div class="columns is-vcentered matrix-row has-text-centered is-desktop">
+        <div class="column is-2">
+          <div class="audio-scene-label">Scenario A</div>
+          <span class="tag is-light is-danger snr-tag">+5 dB SNR</span>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr5/04_scenarioA_snr5_11320/mixture.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr5/04_scenarioA_snr5_11320/target.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr5/04_scenarioA_snr5_11320/tango.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr5/04_scenarioA_snr5_11320/gtcrn.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr5/04_scenarioA_snr5_11320/rt_tango.wav"></audio>
+        </div>
+      </div>
+
+      <!-- Row 6: Scenario B +5 dB SNR -->
+      <div class="columns is-vcentered matrix-row has-text-centered is-desktop">
+        <div class="column is-2">
+          <div class="audio-scene-label">Scenario B</div>
+          <span class="tag is-light is-danger snr-tag">+5 dB SNR</span>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr5/01_scenarioB_snr5_11435/mixture.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr5/01_scenarioB_snr5_11435/target.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr5/01_scenarioB_snr5_11435/tango.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr5/01_scenarioB_snr5_11435/gtcrn.wav"></audio>
+        </div>
+        <div class="column is-2">
+          <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr5/01_scenarioB_snr5_11435/rt_tango.wav"></audio>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <div class="bibtex-header">
+      <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+    </div>
+    <pre id="bibtex-code"><code>@inproceedings{benslimane26_interspeech,
+  title={{RT-Tango: Real-Time Distributed Binaural Speech Enhancement for Low-Power Hearing Aid Devices}},
+  author={Zahra Benslimane and Pierre Chouteau and Martyna Poreba and Fabrice Auzanneau and Michal Szczepanski and Fabian Chersi and Romain Serizel},
+  year={2026},
+  booktitle={{Interspeech 2026}},
+  pages={3027--3031},
+  doi={10.21437/Interspeech.2026-3301},
+  issn={2958-1796},
+}</code></pre>
+  </div>
+</section>
+<!--End BibTex citation -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" 
+            target="_blank">Academic Project Page Template</a>  which was adopted from the 
+            <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask  that you 
+            link back to this page in the footer. <br> This website is  licensed under a 
+            <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" 
+            target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+<!-- End of Statcounter Code -->
+
+</body>
+</html>
