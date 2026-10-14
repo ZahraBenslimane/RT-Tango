@@ -391,42 +391,6 @@
         </div>
       </div>
 
-    <div class="compute-summary-header">
-      <h3 class="title is-5" id="compute-cost-title">Computational Cost</h3>
-    </div>
-
-    <div class="compute-summary" aria-labelledby="compute-cost-title">
-      <div class="compute-table-wrap">
-        <table class="compute-compact-table">
-          <thead>
-            <tr>
-              <th scope="col">Method</th>
-              <th scope="col" class="has-text-centered">STFT Frame shift</th>
-              <th scope="col" class="has-text-centered">Cost</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Tango (Baseline)</td>
-              <td class="has-text-centered">16 ms</td>
-              <td class="has-text-centered">605.98 MMAC/s</td>
-            </tr>
-            <tr>
-              <td>GTCRN</td>
-              <td class="has-text-centered">4 ms</td>
-              <td class="has-text-centered">197.50 MMAC/s</td>
-            </tr>
-            <tr class="is-ours">
-              <td>RT-Tango (Ours)</td>
-              <td class="has-text-centered">4 ms</td>
-              <td class="has-text-centered">33.41 MMAC/s</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="compute-unit-note">MMAC/s per processing node.</p>
-    </div>
-
     <div class="audio-matrix-container">
     
       <!-- Table Header Labels -->
@@ -579,6 +543,45 @@
     </div>
 
 
+    <div class="compute-summary-header">
+      <h3 class="title is-5" id="compute-cost-title">Computational Cost</h3>
+    </div>
+
+    <div class="compute-summary" aria-labelledby="compute-cost-title">
+      <div class="compute-table-wrap">
+        <table class="compute-compact-table">
+          <thead>
+            <tr>
+              <th scope="col">Method</th>
+              <th scope="col" class="has-text-centered">STFT Frame shift</th>
+              <th scope="col" class="has-text-centered">Number of Parameters</th>
+              <th scope="col" class="has-text-centered">MMACs/s</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tango (Baseline)</td>
+              <td class="has-text-centered">16 ms</td>
+              <td class="has-text-centered">--</td>
+              <td class="has-text-centered">605.98</td>
+            </tr>
+            <tr>
+              <td>GTCRN</td>
+              <td class="has-text-centered">4 ms</td>
+              <td class="has-text-centered">--</td>
+              <td class="has-text-centered">197.50</td>
+            </tr>
+            <tr class="is-ours">
+              <td>RT-Tango (Ours)</td>
+              <td class="has-text-centered">4 ms</td>
+              <td class="has-text-centered">--</td>
+              <td class="has-text-centered">33.41</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="compute-unit-note">MMAC/s per processing node.</p>
+    </div>
 
   </div>
 </section>
