@@ -748,7 +748,7 @@ code {
   font-weight: 600;
 }
 
-.compute-compact-table tbody td.has-text-right {
+.compute-compact-table tbody td.has-text-centered {
   font-size: 0.86rem;
 }
 
