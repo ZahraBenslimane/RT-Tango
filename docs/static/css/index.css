@@ -679,6 +679,58 @@ code {
   max-width: 960px !important; /* This is Bulma's exact default value for is-max-desktop */
 }
 
+
+.compute-table-container {
+  background: var(--background-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.compute-table-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.compute-table-header .title {
+  margin-bottom: 0 !important;
+  color: var(--text-primary);
+}
+
+.compute-table-header p,
+.compute-table-note {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.compute-table {
+  margin-bottom: 0.75rem !important;
+  background: transparent;
+}
+
+.compute-table th {
+  color: var(--text-secondary) !important;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.compute-table td {
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+.compute-table tbody tr:last-child td {
+  font-weight: 700;
+}
+
 .audio-matrix-container {
   background: var(--background-primary);
   border: 1px solid var(--border-color);
@@ -748,6 +800,18 @@ code {
 }
 
 @media screen and (max-width: 1023px) {
+  .compute-table-container {
+    padding: 1rem;
+  }
+
+  .compute-table-header {
+    display: block;
+  }
+
+  .compute-table-header p {
+    margin-top: 0.25rem;
+  }
+
   .audio-matrix-container {
     padding: 1rem;
   }

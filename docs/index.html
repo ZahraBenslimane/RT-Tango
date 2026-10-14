@@ -391,6 +391,42 @@
         </div>
       </div>
 
+    <div class="compute-table-container" aria-labelledby="compute-cost-title">
+      <div class="compute-table-header">
+        <h3 class="title is-5" id="compute-cost-title">Computational Cost</h3>
+        <p>Total cost is reported in MMAC/s per processing node.</p>
+      </div>
+      <div class="table-container">
+        <table class="table is-fullwidth compute-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>STFT hop</th>
+              <th class="has-text-right">Total MMAC/s</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tango (Baseline)</td>
+              <td>16 ms</td>
+              <td class="has-text-right">605.98</td>
+            </tr>
+            <tr>
+              <td>GTCRN</td>
+              <td>4 ms</td>
+              <td class="has-text-right">197.50</td>
+            </tr>
+            <tr>
+              <td>RT-Tango (Ours)</td>
+              <td>4 ms</td>
+              <td class="has-text-right">33.41</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="compute-table-note">MMAC/s = million multiply-accumulate operations per second of audio.</p>
+    </div>
+
     <div class="audio-matrix-container">
     
       <!-- Table Header Labels -->
