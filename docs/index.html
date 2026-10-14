@@ -394,28 +394,38 @@
     <div class="compute-summary" aria-labelledby="compute-cost-title">
       <div class="compute-summary-header">
         <h3 class="title is-5" id="compute-cost-title">Computational Cost</h3>
-        <p>Total cost per processing node. MMAC/s = million multiply-accumulate operations per second of audio.</p>
+        <p>MMAC/s per processing node.</p>
       </div>
 
-      <div class="compute-methods" role="list">
-        <div class="compute-method-card" role="listitem">
-          <span class="compute-method-name">Tango (Baseline)</span>
-          <span class="tag is-light is-danger compute-cost-tag">605.98 MMAC/s</span>
-          <span class="tag is-light compute-hop-tag">16 ms hop</span>
-        </div>
-
-        <div class="compute-method-card" role="listitem">
-          <span class="compute-method-name">GTCRN</span>
-          <span class="tag is-light is-danger compute-cost-tag">197.50 MMAC/s</span>
-          <span class="tag is-light compute-hop-tag">4 ms hop</span>
-        </div>
-
-        <div class="compute-method-card is-ours" role="listitem">
-          <span class="compute-method-name">RT-Tango (Ours)</span>
-          <span class="tag is-light is-danger compute-cost-tag">33.41 MMAC/s</span>
-          <span class="tag is-light compute-hop-tag">4 ms hop</span>
-        </div>
+      <div class="compute-table-wrap">
+        <table class="compute-compact-table">
+          <thead>
+            <tr>
+              <th scope="col">Method</th>
+              <th scope="col">STFT hop</th>
+              <th scope="col" class="has-text-right">Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tango (Baseline)</td>
+              <td>16 ms</td>
+              <td class="has-text-right">605.98 MMAC/s</td>
+            </tr>
+            <tr>
+              <td>GTCRN</td>
+              <td>4 ms</td>
+              <td class="has-text-right">197.50 MMAC/s</td>
+            </tr>
+            <tr class="is-ours">
+              <td>RT-Tango (Ours)</td>
+              <td>4 ms</td>
+              <td class="has-text-right">33.41 MMAC/s</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+      <p class="compute-note">MMAC/s = million multiply-accumulate operations per second of audio.</p>
     </div>
 
     <div class="audio-matrix-container">
