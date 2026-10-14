@@ -690,10 +690,6 @@ code {
 }
 
 .compute-summary-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
 }
@@ -703,8 +699,8 @@ code {
   color: var(--text-primary);
 }
 
-.compute-summary-header p {
-  margin: 0;
+.compute-unit-note {
+  margin: 0.65rem 0 0;
   color: var(--text-secondary);
   font-size: 0.86rem;
 }
@@ -755,7 +751,6 @@ code {
 .compute-compact-table tbody td.has-text-right {
   font-size: 0.86rem;
 }
-
 
 .compute-compact-table tbody tr:last-child td {
   border-bottom: none;
@@ -845,10 +840,6 @@ code {
 
   .compute-summary-header {
     display: block;
-  }
-
-  .compute-summary-header p {
-    margin-top: 0.25rem;
   }
 
   .compute-compact-table {
