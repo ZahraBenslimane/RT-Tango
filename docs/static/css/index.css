@@ -702,8 +702,7 @@ code {
   color: var(--text-primary);
 }
 
-.compute-summary-header p,
-.compute-note {
+.compute-summary-header p {
   margin: 0;
   color: var(--text-secondary);
   font-size: 0.86rem;
@@ -764,9 +763,6 @@ code {
   color: var(--primary-hover);
 }
 
-.compute-note {
-  margin-top: 0.7rem;
-}
 
 .audio-matrix-container {
   background: var(--background-primary);
