@@ -752,6 +752,11 @@ code {
   font-weight: 600;
 }
 
+.compute-compact-table tbody td.has-text-right {
+  font-size: 0.86rem;
+}
+
+
 .compute-compact-table tbody tr:last-child td {
   border-bottom: none;
 }
