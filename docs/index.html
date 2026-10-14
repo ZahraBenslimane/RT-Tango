@@ -391,60 +391,31 @@
         </div>
       </div>
 
-    <div class="compute-comparison" aria-labelledby="compute-cost-title">
-      <div class="compute-comparison-header">
-        <div>
-          <h3 class="title is-5" id="compute-cost-title">Computational Cost</h3>
-          <p>Total cost per processing node, reported in MMAC/s.</p>
-        </div>
-        <span class="compute-direction">Lower is better</span>
+    <div class="compute-summary" aria-labelledby="compute-cost-title">
+      <div class="compute-summary-header">
+        <h3 class="title is-5" id="compute-cost-title">Computational Cost</h3>
+        <p>Total cost per processing node. MMAC/s = million multiply-accumulate operations per second of audio.</p>
       </div>
 
-      <div class="compute-list" role="list">
-        <div class="compute-item" role="listitem">
-          <div class="compute-method">
-            <span class="compute-name">Tango (Baseline)</span>
-            <span class="compute-hop">16 ms hop</span>
-          </div>
-          <div class="compute-meter" aria-hidden="true">
-            <span style="width: 100%;"></span>
-          </div>
-          <div class="compute-value">
-            <strong>605.98</strong>
-            <span>MMAC/s</span>
-          </div>
+      <div class="compute-methods" role="list">
+        <div class="compute-method-card" role="listitem">
+          <span class="compute-method-name">Tango (Baseline)</span>
+          <span class="tag is-light is-danger compute-cost-tag">605.98 MMAC/s</span>
+          <span class="tag is-light compute-hop-tag">16 ms hop</span>
         </div>
 
-        <div class="compute-item" role="listitem">
-          <div class="compute-method">
-            <span class="compute-name">GTCRN</span>
-            <span class="compute-hop">4 ms hop</span>
-          </div>
-          <div class="compute-meter" aria-hidden="true">
-            <span style="width: 32.6%;"></span>
-          </div>
-          <div class="compute-value">
-            <strong>197.50</strong>
-            <span>MMAC/s</span>
-          </div>
+        <div class="compute-method-card" role="listitem">
+          <span class="compute-method-name">GTCRN</span>
+          <span class="tag is-light is-danger compute-cost-tag">197.50 MMAC/s</span>
+          <span class="tag is-light compute-hop-tag">4 ms hop</span>
         </div>
 
-        <div class="compute-item is-highlighted" role="listitem">
-          <div class="compute-method">
-            <span class="compute-name">RT-Tango (Ours)</span>
-            <span class="compute-hop">4 ms hop</span>
-          </div>
-          <div class="compute-meter" aria-hidden="true">
-            <span style="width: 5.5%;"></span>
-          </div>
-          <div class="compute-value">
-            <strong>33.41</strong>
-            <span>MMAC/s</span>
-          </div>
+        <div class="compute-method-card is-ours" role="listitem">
+          <span class="compute-method-name">RT-Tango (Ours)</span>
+          <span class="tag is-light is-danger compute-cost-tag">33.41 MMAC/s</span>
+          <span class="tag is-light compute-hop-tag">4 ms hop</span>
         </div>
       </div>
-
-      <p class="compute-note">MMAC/s = million multiply-accumulate operations per second of audio.</p>
     </div>
 
     <div class="audio-matrix-container">
