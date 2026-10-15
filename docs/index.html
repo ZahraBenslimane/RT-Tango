@@ -42,7 +42,7 @@
   
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/index.css?v=audio-matrix-seven-players">
   
   <!-- Non-critical CSS - Load asynchronously -->
   <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -371,9 +371,11 @@
             <ol>
               <li><strong>Noisy Input</strong></li>
               <li><strong>Clean Reference</strong></li>
-              <li><strong>Tango (Baseline)</strong></li>
-              <li><strong>GTCRN</strong></li>
+              <li><strong>Tango (Baseline) [1]</strong></li>
+              <li><strong>TGRU-MCWF [2]</strong></li>
+              <li><strong>GTCRN [3]</strong></li>
               <li><strong>RT-Tango (Ours)</strong></li>
+              <li><strong>RT-Tango-OS (Ours) -- 8 ms algorithmic latency</strong></li>
             </ol>
             <p>
               All audio samples are taken from the Binaurec dataset, a binaural speech corpus comprising mixtures 
@@ -391,158 +393,199 @@
         </div>
       </div>
 
-    <div class="audio-matrix-container">
+  </div>
+
+  <div class="audio-matrix-container" role="region" aria-label="Audio comparisons" tabindex="0">
     
       <!-- Table Header Labels -->
       <div class="columns is-vcentered matrix-header has-text-centered is-desktop">
-        <div class="column is-2">Acoustic Scenario</div>
-        <div class="column is-2">Noisy Input</div>
-        <div class="column is-2">Clean</div>
-        <div class="column is-2">Tango (Baseline)</div>
-        <div class="column is-2">GTCRN</div>
-        <div class="column is-2">RT-Tango (Ours)</div>
+        <div class="column">Acoustic Scenario</div>
+        <div class="column">Noisy Input</div>
+        <div class="column">Clean</div>
+        <div class="column">Tango (Baseline)</div>
+        <div class="column">TGRU-MCWF</div>
+        <div class="column">GTCRN</div>
+        <div class="column">RT-Tango (Ours)</div>
+        <div class="column">RT-Tango-OS (Ours)</div>
       </div>
 
       <!-- Row 1: Scenario A -5 dB SNR -->
       <div class="columns is-vcentered matrix-row has-text-centered is-desktop">
-        <div class="column is-2">
+        <div class="column">
           <div class="audio-scene-label">Scenario A</div>
           <span class="tag is-light is-danger snr-tag">-5 dB SNR</span>
         </div>
-        <div class="column is-2" data-label="Noisy Input">
+        <div class="column" data-label="Noisy Input">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr-5/01_scenarioA_snr-5_11194/mixture.wav"></audio>
         </div>
-        <div class="column is-2" data-label="Clean">
+        <div class="column" data-label="Clean">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr-5/01_scenarioA_snr-5_11194/target.wav"></audio>
         </div>
-        <div class="column is-2" data-label="Tango (Baseline)">
+        <div class="column" data-label="Tango (Baseline)">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr-5/01_scenarioA_snr-5_11194/tango.wav"></audio>
         </div>
-        <div class="column is-2" data-label="GTCRN">
+        <div class="column" data-label="TGRU-MCWF">
+          <audio controls controlslist="nodownload noplaybackrate" preload="none" aria-label="TGRU-MCWF audio example" src="static/audio/scenarioA/snr-5/01_scenarioA_snr-5_11194/tgru_mcwf.wav"></audio>
+        </div>
+        <div class="column" data-label="GTCRN">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr-5/01_scenarioA_snr-5_11194/gtcrn_4ms.wav"></audio>
         </div>
-        <div class="column is-2" data-label="RT-Tango (Ours)">
+        <div class="column" data-label="RT-Tango (Ours)">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr-5/01_scenarioA_snr-5_11194/rt_tango.wav"></audio>
+        </div>
+        <div class="column" data-label="RT-Tango-OS (Ours)">
+          <audio controls controlslist="nodownload noplaybackrate" preload="none" aria-label="RT-Tango-OS audio example" src="static/audio/scenarioA/snr-5/01_scenarioA_snr-5_11194/rt-tango_os.wav"></audio>
         </div>
       </div>
 
       <!-- Row 2: Scenario B -5 dB SNR -->
       <div class="columns is-vcentered matrix-row has-text-centered is-desktop">
-        <div class="column is-2">
+        <div class="column">
           <div class="audio-scene-label">Scenario B</div>
           <span class="tag is-light is-danger snr-tag">-5 dB SNR</span>
         </div>
-        <div class="column is-2" data-label="Noisy Input">
+        <div class="column" data-label="Noisy Input">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr-5/01_scenarioB_snr-5_11269/mixture.wav"></audio>
         </div>
-        <div class="column is-2" data-label="Clean">
+        <div class="column" data-label="Clean">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr-5/01_scenarioB_snr-5_11269/target.wav"></audio>
         </div>
-        <div class="column is-2" data-label="Tango (Baseline)">
+        <div class="column" data-label="Tango (Baseline)">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr-5/01_scenarioB_snr-5_11269/tango.wav"></audio>
         </div>
-        <div class="column is-2" data-label="GTCRN">
+        <div class="column" data-label="TGRU-MCWF">
+          <audio controls controlslist="nodownload noplaybackrate" preload="none" aria-label="TGRU-MCWF audio example" src="static/audio/scenarioB/snr-5/01_scenarioB_snr-5_11269/tgru_mcwf.wav"></audio>
+        </div>
+        <div class="column" data-label="GTCRN">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr-5/01_scenarioB_snr-5_11269/gtcrn_4ms.wav"></audio>
         </div>
-        <div class="column is-2" data-label="RT-Tango (Ours)">
+        <div class="column" data-label="RT-Tango (Ours)">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr-5/01_scenarioB_snr-5_11269/rt_tango.wav"></audio>
+        </div>
+        <div class="column" data-label="RT-Tango-OS (Ours)">
+          <audio controls controlslist="nodownload noplaybackrate" preload="none" aria-label="RT-Tango-OS audio example" src="static/audio/scenarioB/snr-5/01_scenarioB_snr-5_11269/rt-tango_os.wav"></audio>
         </div>
       </div>
 
       <!-- Row 3: Scenario A 0 dB SNR -->
       <div class="columns is-vcentered matrix-row has-text-centered is-desktop">
-        <div class="column is-2">
+        <div class="column">
           <div class="audio-scene-label">Scenario A</div>
           <span class="tag is-light is-danger snr-tag">0 dB SNR</span>
         </div>
-        <div class="column is-2" data-label="Noisy Input">
+        <div class="column" data-label="Noisy Input">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr0/02_scenarioA_snr0_11545/mixture.wav"></audio>
         </div>
-        <div class="column is-2" data-label="Clean">
+        <div class="column" data-label="Clean">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr0/02_scenarioA_snr0_11545/target.wav"></audio>
         </div>
-        <div class="column is-2" data-label="Tango (Baseline)">
+        <div class="column" data-label="Tango (Baseline)">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr0/02_scenarioA_snr0_11545/tango.wav"></audio>
         </div>
-        <div class="column is-2" data-label="GTCRN">
+        <div class="column" data-label="TGRU-MCWF">
+          <audio controls controlslist="nodownload noplaybackrate" preload="none" aria-label="TGRU-MCWF audio example" src="static/audio/scenarioA/snr0/02_scenarioA_snr0_11545/tgru_mcwf.wav"></audio>
+        </div>
+        <div class="column" data-label="GTCRN">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr0/02_scenarioA_snr0_11545/gtcrn_4ms.wav"></audio>
         </div>
-        <div class="column is-2" data-label="RT-Tango (Ours)">
+        <div class="column" data-label="RT-Tango (Ours)">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr0/02_scenarioA_snr0_11545/rt_tango.wav"></audio>
+        </div>
+        <div class="column" data-label="RT-Tango-OS (Ours)">
+          <audio controls controlslist="nodownload noplaybackrate" preload="none" aria-label="RT-Tango-OS audio example" src="static/audio/scenarioA/snr0/02_scenarioA_snr0_11545/rt-tango_os.wav"></audio>
         </div>
       </div>
 
       <!-- Row 4: Scenario B 0 dB SNR -->
       <div class="columns is-vcentered matrix-row has-text-centered is-desktop">
-        <div class="column is-2">
+        <div class="column">
           <div class="audio-scene-label">Scenario B</div>
           <span class="tag is-light is-danger snr-tag">0 dB SNR</span>
         </div>
-        <div class="column is-2" data-label="Noisy Input">
+        <div class="column" data-label="Noisy Input">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr0/01_scenarioB_snr0_11613/mixture.wav"></audio>
         </div>
-        <div class="column is-2" data-label="Clean">
+        <div class="column" data-label="Clean">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr0/01_scenarioB_snr0_11613/target.wav"></audio>
         </div>
-        <div class="column is-2" data-label="Tango (Baseline)">
+        <div class="column" data-label="Tango (Baseline)">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr0/01_scenarioB_snr0_11613/tango.wav"></audio>
         </div>
-        <div class="column is-2" data-label="GTCRN">
+        <div class="column" data-label="TGRU-MCWF">
+          <audio controls controlslist="nodownload noplaybackrate" preload="none" aria-label="TGRU-MCWF audio example" src="static/audio/scenarioB/snr0/01_scenarioB_snr0_11613/tgru_mcwf.wav"></audio>
+        </div>
+        <div class="column" data-label="GTCRN">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr0/01_scenarioB_snr0_11613/gtcrn_4ms.wav"></audio>
         </div>
-        <div class="column is-2" data-label="RT-Tango (Ours)">
+        <div class="column" data-label="RT-Tango (Ours)">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr0/01_scenarioB_snr0_11613/rt_tango.wav"></audio>
+        </div>
+        <div class="column" data-label="RT-Tango-OS (Ours)">
+          <audio controls controlslist="nodownload noplaybackrate" preload="none" aria-label="RT-Tango-OS audio example" src="static/audio/scenarioB/snr0/01_scenarioB_snr0_11613/rt-tango_os.wav"></audio>
         </div>
       </div>
 
       <!-- Row 5: Scenario A +5 dB SNR -->
       <div class="columns is-vcentered matrix-row has-text-centered is-desktop">
-        <div class="column is-2">
+        <div class="column">
           <div class="audio-scene-label">Scenario A</div>
           <span class="tag is-light is-danger snr-tag">+5 dB SNR</span>
         </div>
-        <div class="column is-2" data-label="Noisy Input">
+        <div class="column" data-label="Noisy Input">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr5/04_scenarioA_snr5_11320/mixture.wav"></audio>
         </div>
-        <div class="column is-2" data-label="Clean">
+        <div class="column" data-label="Clean">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr5/04_scenarioA_snr5_11320/target.wav"></audio>
         </div>
-        <div class="column is-2" data-label="Tango (Baseline)">
+        <div class="column" data-label="Tango (Baseline)">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr5/04_scenarioA_snr5_11320/tango.wav"></audio>
         </div>
-        <div class="column is-2" data-label="GTCRN">
+        <div class="column" data-label="TGRU-MCWF">
+          <audio controls controlslist="nodownload noplaybackrate" preload="none" aria-label="TGRU-MCWF audio example" src="static/audio/scenarioA/snr5/04_scenarioA_snr5_11320/tgru_mcwf.wav"></audio>
+        </div>
+        <div class="column" data-label="GTCRN">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr5/04_scenarioA_snr5_11320/gtcrn_4ms.wav"></audio>
         </div>
-        <div class="column is-2" data-label="RT-Tango (Ours)">
+        <div class="column" data-label="RT-Tango (Ours)">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioA/snr5/04_scenarioA_snr5_11320/rt_tango.wav"></audio>
+        </div>
+        <div class="column" data-label="RT-Tango-OS (Ours)">
+          <audio controls controlslist="nodownload noplaybackrate" preload="none" aria-label="RT-Tango-OS audio example" src="static/audio/scenarioA/snr5/04_scenarioA_snr5_11320/rt-tango_os.wav"></audio>
         </div>
       </div>
 
       <!-- Row 6: Scenario B +5 dB SNR -->
       <div class="columns is-vcentered matrix-row has-text-centered is-desktop">
-        <div class="column is-2">
+        <div class="column">
           <div class="audio-scene-label">Scenario B</div>
           <span class="tag is-light is-danger snr-tag">+5 dB SNR</span>
         </div>
-        <div class="column is-2" data-label="Noisy Input">
+        <div class="column" data-label="Noisy Input">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr5/01_scenarioB_snr5_11435/mixture.wav"></audio>
         </div>
-        <div class="column is-2" data-label="Clean">
+        <div class="column" data-label="Clean">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr5/01_scenarioB_snr5_11435/target.wav"></audio>
         </div>
-        <div class="column is-2" data-label="Tango (Baseline)">
+        <div class="column" data-label="Tango (Baseline)">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr5/01_scenarioB_snr5_11435/tango.wav"></audio>
         </div>
-        <div class="column is-2" data-label="GTCRN">
+        <div class="column" data-label="TGRU-MCWF">
+          <audio controls controlslist="nodownload noplaybackrate" preload="none" aria-label="TGRU-MCWF audio example" src="static/audio/scenarioB/snr5/01_scenarioB_snr5_11435/tgru_mcwf.wav"></audio>
+        </div>
+        <div class="column" data-label="GTCRN">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr5/01_scenarioB_snr5_11435/gtcrn_4ms.wav"></audio>
         </div>
-        <div class="column is-2" data-label="RT-Tango (Ours)">
+        <div class="column" data-label="RT-Tango (Ours)">
           <audio controls controlslist="nodownload noplaybackrate" src="static/audio/scenarioB/snr5/01_scenarioB_snr5_11435/rt_tango.wav"></audio>
+        </div>
+        <div class="column" data-label="RT-Tango-OS (Ours)">
+          <audio controls controlslist="nodownload noplaybackrate" preload="none" aria-label="RT-Tango-OS audio example" src="static/audio/scenarioB/snr5/01_scenarioB_snr5_11435/rt-tango_os.wav"></audio>
         </div>
       </div>
     </div>
 
 
+  <div class="container is-max-desktop">
     <div class="compute-summary-header">
       <h3 class="title is-5" id="compute-cost-title">Computational Cost</h3>
     </div>
@@ -577,6 +620,12 @@
               <td class="has-text-centered">267.3 K</td>
               <td class="has-text-centered">33.41</td>
             </tr>
+            <tr class="is-ours">
+              <td>RT-Tango-OS (Ours)</td>
+              <td class="has-text-centered">4 ms</td>
+              <td class="has-text-centered">267.3 K</td>
+              <td class="has-text-centered">35.14</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -608,6 +657,35 @@
   </div>
 </section>
 <!--End BibTex citation -->
+
+<section class="section pt-0" id="References" aria-labelledby="references-title">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-6" id="references-title">References</h2>
+    <ol class="is-size-7">
+      <li id="reference-tango">
+        <strong>Tango (Baseline).</strong> N. Furnon, R. Serizel, S. Essid and I. Illina,
+        &ldquo;DNN-Based Mask Estimation for Distributed Speech Enhancement in Spatially Unconstrained Microphone Arrays,&rdquo;
+        <em>IEEE/ACM Transactions on Audio, Speech, and Language Processing</em>,
+        vol. 29, pp. 2310-2323, 2021.
+        <a href="https://doi.org/10.1109/TASLP.2021.3092838" target="_blank" rel="noopener noreferrer">doi: 10.1109/TASLP.2021.3092838</a>.
+      </li>
+      <li id="reference-gtcrn">
+        <strong>GTCRN.</strong> X. Rong, T. Sun, X. Zhang, Y. Hu, C. Zhu and J. Lu,
+        &ldquo;GTCRN: A Speech Enhancement Model Requiring Ultralow Computational Resources,&rdquo;
+        <em>ICASSP 2024 - 2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</em>,
+        Seoul, Korea, Republic of, 2024, pp. 971-975.
+        <a href="https://doi.org/10.1109/ICASSP48485.2024.10448310" target="_blank" rel="noopener noreferrer">doi: 10.1109/ICASSP48485.2024.10448310</a>.
+      </li>
+      <li id="reference-tgru-mcwf">
+        <strong>TGRU-MCWF.</strong> A. Pandey and J. Azcarreta,
+        &ldquo;Ultra low-compute complex spectral masking for multichannel speech enhancement,&rdquo;
+        <em>ICASSP 2025 - 2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</em>,
+        Hyderabad, India, 2025, pp. 1-5.
+        <a href="https://doi.org/10.1109/ICASSP49660.2025.10890512" target="_blank" rel="noopener noreferrer">doi: 10.1109/ICASSP49660.2025.10890512</a>.
+      </li>
+    </ol>
+  </div>
+</section>
 
 
 <footer class="footer">

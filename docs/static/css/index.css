@@ -672,7 +672,12 @@ code {
 }
 
 /* Audio Evaluation Matrix Container */
-/* Forces the container inside this specific hero section to behave normally */
+#AudioExamples {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Keep the introduction and compute summary at a comfortable reading width. */
 #AudioExamples .hero-body .container,
 #AudioExamples .container.is-max-desktop {
   width: 100% !important;
@@ -766,12 +771,38 @@ code {
 
 
 .audio-matrix-container {
+  --audio-player-width: 150px;
+  width: 78%;
+  margin-inline: auto;
+  min-width: 0;
   background: var(--background-primary);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-md);
   padding: 1.5rem;
   margin-top: 2rem;
+}
+
+/* Keep desktop players wide enough for their controls; scroll the matrix as needed. */
+@media screen and (min-width: 1024px) {
+  .audio-matrix-container {
+    overflow-x: auto;
+  }
+
+  .audio-matrix-container > .matrix-header,
+  .audio-matrix-container > .matrix-row {
+    display: grid;
+    grid-template-columns: 10rem repeat(7, calc(var(--audio-player-width) + 1.5rem));
+    width: max-content;
+    min-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .audio-matrix-container .matrix-row audio {
+    width: var(--audio-player-width) !important;
+    min-width: 0;
+  }
 }
 
 /* Header Row Styling */
